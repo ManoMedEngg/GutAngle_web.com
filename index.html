@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GUTANGLE - A Smart Belt for Spine and Stomach Wellness</title>
+    <meta name="description" content="GutAngle_Monitor: Clinical-grade EEG and lumbar posture monitoring platform.">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+
+<body>
+    <div id="view-landing">
+        <!-- Background Video -->
+        <video autoplay muted loop id="video-background" class="video-background">
+            <source src="vdo/bg.mp4" type="video/mp4">
+        </video>
+
+        <div class="content-overlay">
+            <header class="navbar">
+                <div class="logo">
+                    <img id="project-icon" src="img/icon.png" alt="GUTANGLE Icon" onerror="this.style.display='none'">
+                    <span class="project-name">GUTANGLE</span>
+                </div>
+                <nav class="nav-links">
+                    <a href="#features">Features</a>
+                    <a href="#docs">Documentation</a>
+                    <a href="#support">Support</a>
+                    <a href="#contact">Contact</a>
+                </nav>
+            </header>
+
+            <span class="tagline">"Prevention is Better then Cure"</span>
+            <p>Special Thanks to Mrs. Maria Celestina | AP, BME | Kings Engineering College</p>
+
+            <main class="hero-section">
+                <div class="hero-content">
+                    <div class="logo-hero">
+                        <div class="logo-circle">
+                            <img src="img/icon.png" alt="GUTANGLE Logo">
+                        </div>
+                    </div>
+                    <span class="project-title">GutAngle_Monitor</span>
+                    <p class="tagline" id="tagline">A Smart Belt for Spine and Stomach Wellness</p>
+
+                    <div class="hero-actions">
+                    
+                        <button id="download-apk-btn" class="btn btn-secondary" onclick="openLogin('download')">
+                            <i class="fas fa-download"></i> Download APK
+                        </button>
+                    </div>
+
+                    <div class="language-selector">
+                        <i class="fas fa-globe"></i>
+                        <select id="language-select">
+                            <option value="en">English</option>
+                            <option value="ta">தமிழ் (Tamil)</option>
+                            <option value="ml">മലയാളം (Malayalam)</option>
+                            <option value="ur">اردو (Urdu)</option>
+                            <option value="hi">हिंदी (Hindi)</option>
+                        </select>
+                    </div>
+                </div>
+            </main>
+
+            <section id="features" class="features-section">
+                <div class="container">
+                    <h2>Core Features</h2>
+                    <div class="features-grid">
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-wave-square"></i></div>
+                            <h3>Real-time Monitoring</h3>
+                            <p>Live EEG and lumbar position visualization with clinical-grade precision</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-chart-line"></i></div>
+                            <h3>History Analytics</h3>
+                            <p>Comprehensive session history with export to CSV formats</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-universal-access"></i></div>
+                            <h3>Accessibility First</h3>
+                            <p>Designed for older adults with high-contrast UI</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-shield-alt"></i></div>
+                            <h3>Secure Integration</h3>
+                            <p>HIPAA-compliant data handling with offline architecture</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-bluetooth-b"></i></div>
+                            <h3>Bluetooth Connectivity</h3>
+                            <p>Wireless real-time data from the GutBelt via Bluetooth</p>
+                        </div>
+                        <div class="feature-card">
+                            <div class="feature-icon"><i class="fas fa-bell"></i></div>
+                            <h3>Smart Alerts</h3>
+                            <p>Posture and hunger signal alerts with buzzer notifications</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <footer class="footer-section" id="contact">
+                <div class="container">
+                    <div class="footer-grid">
+                        <div>
+                            <h3>GUTANGLE Platform</h3>
+                            <p>The prevalence of chronic diseases and physical disabilities is rising at an alarming
+                                rate, especially among people leading sedentary lifestyles.</p>
+                        </div>
+                        <div>
+                            <h3>Quick Links</h3>
+                            <ul>
+                                <li><a href="#features">Features</a></li>
+                                <li><a href="#docs">Documentation</a></li>
+                                <li><a href="#support">Support</a></li>
+                            </ul>
+                        </div>
+                        <div>
+                            <h3>Contact</h3>
+                            <p><i class="fas fa-envelope"></i> <a
+                                    href="mailto:manojvenu23@gmail.com">manojvenu23@gmail.com</a></p>
+                            <p><i class="fas fa-phone"></i> <a href="tel:+917358878062">+91 73588 78062</a></p>
+                            <p><i class="fas fa-map-marker-alt"></i> Kings Engineering College, Sriperumbudur.</p>
+                        </div>
+                    </div>
+                    <div class="copyright">
+                        <p>© 2025 GUTANGLE- A Smart Belt that Prevent you from Future disease and Disorder</p>
+                        <p>Developed By Manoj | Biomedical Engineering</p>
+                        <p>Special Thanks to Mrs. Maria Celestina | AP, BME | Kings Engineering College</p>
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+
+    <!-- Login Modal Overlay -->
+    <div id="login-modal"
+        style="display:none; position:fixed; top:0; left:0; width:100%; height:100%; z-index:9999; background:radial-gradient(circle at top,#1a0505 0%,#0a0202 40%,#000 100%); overflow-y:auto;">
+        <canvas id="lightRaysCanvas" class="light-rays-container"></canvas>
+        <button onclick="closeLogin()"
+            style="position:absolute;top:20px;left:20px;background:rgba(220,38,38,0.2);border:1px solid rgba(220,38,38,0.4);color:#ff8080;padding:8px 16px;border-radius:20px;cursor:pointer;z-index:1">
+            <i class="fas fa-arrow-left"></i> Back
+        </button>
+        <main class="app-shell">
+            <!-- Hero Side -->
+            <section class="hero-side">
+                <div class="hero-logo-row">
+                    <div class="logo-circle">
+                        <img src="img/icon.png" alt="GUTANGLE logo" onerror="this.style.display='none'">
+                    </div>
+                    <div>
+                        <div class="hero-badge">
+                            <span class="hero-dot"></span>
+                            <span>CONTINUOUS EGG &amp; LUMBAR MONITORING</span>
+                        </div>
+                    </div>
+                </div>
+                <h1 class="hero-title">
+                    GUTANGLE
+                    <span>REAL‑TIME EGG &amp; LUMBAR</span>
+                </h1>
+                <p class="hero-copy">
+                    Simultaneously capture EGG signals and lumbar posture metrics.
+                    Visualize gut activity alongside spinal alignment in real time.
+                </p>
+                <div class="hero-metrics">
+                    <div class="metric-pill"><span class="dot"></span><strong>EGG Signal Analysis</strong></div>
+                    <div class="metric-pill"><span class="dot"></span><strong>Respiration Rate</strong></div>
+                    <div class="metric-pill"><span class="dot"></span><strong>Lumbar angle tracking</strong></div>
+                    <div class="metric-pill"><span class="dot"></span><strong>IMU Position (X/Y/Z)</strong></div>
+                </div>
+            </section>
+
+            <!-- Auth Side -->
+            <section class="auth-side">
+                <div class="auth-tabs">
+                    <div class="auth-tab-pill" id="tabPill" data-mode="signup"></div>
+                    <button class="auth-tab" id="tabSignup" data-active="true" onclick="switchTab('signup')">Sign
+                        up</button>
+                    <button class="auth-tab" id="tabSignin" data-active="false" onclick="switchTab('signin')">Sign
+                        in</button>
+                </div>
+
+                <h2 class="auth-title" id="authTitle">Create GUTANGLE workspace</h2>
+                <p class="auth-caption" id="authCaption">
+                    <span>Start by creating an account to get the app.</span>
+                    <span style="display:block;font-weight:bold;color:#fff;">Sign up is free.</span>
+                </p>
+
+                <!-- Sign Up Form -->
+                <form id="signupForm" class="auth-form" data-active="true" onsubmit="handleSignup(event)">
+                    <div class="field-group">
+                        <label class="field-label">Full name</label>
+                        <div class="field-control">
+                            <input class="field-input" type="text" id="su-name" placeholder="Manoj" required>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Email ID</label>
+                        <div class="field-control">
+                            <input class="field-input" type="email" id="su-email"
+                                placeholder="medicalengineer@gmail.com" required>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Phone Number</label>
+                        <div class="field-control">
+                            <input class="field-input" type="tel" id="su-phone"
+                                placeholder="+91 73588 78062" required>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Age</label>
+                        <div class="field-control">
+                            <input class="field-input" type="number" id="su-age"
+                                placeholder="21" required>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Address</label>
+                        <div class="field-control">
+                            <textarea class="field-input" id="su-address" rows="2"
+                                placeholder="Your address here..." style="background:transparent;border:none;color:#fff;width:100%;resize:none;outline:none;" required></textarea>
+                        </div>
+                    </div>
+                    <div class="field-group" id="su-pass-group">
+                        <label class="field-label">Password</label>
+                        <div class="field-control">
+                            <input class="field-input" type="password" id="su-pass" placeholder="Password" required>
+                        </div>
+                    </div>
+                    <div id="su-error" class="error-msg error-msg--error" style="display:none;"></div>
+                    <button type="submit" class="primary-btn">Create account &amp; Download APK</button>
+                    <div class="form-footer-row">
+                        <span>Already have an account?</span>
+                        <button type="button" class="link-btn" onclick="switchTab('signin')">Sign in</button>
+                    </div>
+                </form>
+
+                <!-- Sign In Form -->
+                <form id="signinForm" class="auth-form" data-active="false" onsubmit="handleSignin(event)">
+                    <div class="field-group">
+                        <label class="field-label">Email ID</label>
+                        <div class="field-control">
+                            <input class="field-input" type="email" id="si-email"
+                                placeholder="medicalengineer@gmail.com" required>
+                        </div>
+                    </div>
+                    <div class="field-group">
+                        <label class="field-label">Password</label>
+                        <div class="field-control">
+                            <input class="field-input" type="password" id="si-pass" placeholder="Enter your password"
+                                required>
+                        </div>
+                    </div>
+                    <div id="si-error" class="error-msg error-msg--error" style="display:none;"></div>
+                    <button type="submit" class="primary-btn" id="signin-submit-btn">Sign in &amp; Download APK</button>
+                    <div class="form-footer-row">
+                        <span>Don't have an account?</span>
+                        <button type="button" class="link-btn" onclick="switchTab('signup')">Sign up</button>
+                    </div>
+                </form>
+            </section>
+        </main>
+    </div>
+
+    <!-- Download Success Toast -->
+    <div id="download-toast"
+        style="display:none;position:fixed;bottom:30px;right:30px;background:linear-gradient(135deg,#1a1a1a,#0d0d0d);border:1px solid rgba(220,38,38,0.5);border-radius:15px;padding:20px 28px;color:#fff;z-index:99999;box-shadow:0 0 30px rgba(220,38,38,0.3);">
+        <p style="margin:0;font-size:1.1em;"><i class="fas fa-check-circle"
+                style="color:#22c55e;margin-right:10px;"></i> <strong>Opening GutAngle Google Drive...</strong></p>
+        <p style="margin:4px 0 0;color:#a3a3a3;font-size:0.85em;">Please download the APK from the Drive folder.</p>
+    </div>
+
+    <script src="js/site.js"></script>
+</body>
+
+</html>
